@@ -128,7 +128,22 @@
   .edu-row .deg{color:var(--accent);font-size:.95rem;margin-top:2px}
   .edu-row .where{color:var(--muted);font-size:.85rem}
   .edu-row .yr{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--muted);white-space:nowrap}
+  .edu-row h3 a::after {
+  content: " ↗";
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: 6px;
+  transition: color 0.3s;
+}
 
+.edu-row h3 a:hover {
+  color: var(--accent);
+}
+
+.edu-row h3 a:hover::after {
+  color: var(--accent);
+}
   /* ---------- Contact ---------- */
   #contact{text-align:center;padding:130px 0}
   #contact .big{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-.02em;line-height:1.15;max-width:22ch;margin:0 auto 20px}
