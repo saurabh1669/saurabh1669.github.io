@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saurabh Kumar — Data & AI Professional</title>
+<meta name="description" content="Saurabh Kumar — Senior Data Analyst at Walmart. Enterprise analytics platforms, AI-powered decision-support tools, text-to-SQL systems, and compliance analytics at Fortune 1 scale.">
+<style>
+  :root{
+    --bg:#0b0f17; --bg2:#101623; --card:#141c2c; --card2:#182136;
+    --text:#e8edf5; --muted:#9aa7bd; --accent:#4fc3f7; --accent2:#7c6cff;
+    --green:#4ade80; --amber:#fbbf24; --border:#223049;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,15,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-weight:700;font-size:1.05rem;color:var(--text)}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);font-size:.92rem}
+  .nav-links a:hover{color:var(--accent);text-decoration:none}
+
+  /* Hero */
+  header{padding:90px 0 60px;background:radial-gradient(ellipse 70% 55% at 50% -5%,rgba(79,195,247,.14),transparent),radial-gradient(ellipse 50% 40% at 85% 10%,rgba(124,108,255,.12),transparent)}
+  .kicker{color:var(--accent);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;margin-bottom:14px}
+  h1{font-size:clamp(2.2rem,5.5vw,3.4rem);line-height:1.1;margin-bottom:14px}
+  h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{font-size:1.15rem;color:var(--muted);max-width:760px;margin-bottom:26px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+  .btn{display:inline-block;padding:11px 22px;border-radius:8px;font-weight:600;font-size:.95rem;transition:.2s}
+  .btn-primary{background:linear-gradient(90deg,#2196f3,var(--accent2));color:#fff}
+  .btn-primary:hover{opacity:.9;text-decoration:none}
+  .btn-ghost{border:1px solid var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .stat b{display:block;font-size:1.55rem;color:var(--accent)}
+  .stat span{color:var(--muted);font-size:.85rem}
+
+  /* Sections */
+  section{padding:64px 0;border-top:1px solid var(--border)}
+  h2{font-size:1.7rem;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:34px;max-width:760px}
+  h2 .hash{color:var(--accent);margin-right:6px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:28px}
+  .about-grid p{color:var(--muted);margin-bottom:14px}
+  .about-grid p b{color:var(--text)}
+  .awards{display:flex;flex-direction:column;gap:12px}
+  .award{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:10px;padding:14px 16px}
+  .award b{display:block;color:var(--amber);font-size:.95rem}
+  .award span{color:var(--muted);font-size:.85rem}
+
+  /* Projects */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:.2s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .card h3{font-size:1.08rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.9rem;margin-bottom:14px;flex-grow:1}
+  .metric{color:var(--green);font-weight:700;font-size:.9rem;margin-bottom:12px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{background:var(--bg2);border:1px solid var(--border);color:var(--accent);font-size:.72rem;padding:3px 9px;border-radius:20px}
+
+  /* Experience */
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--border)}
+  .job{position:relative;margin-bottom:36px}
+  .job::before{content:"";position:absolute;left:-26px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(79,195,247,.15)}
+  .job h3{font-size:1.12rem}
+  .job .org{color:var(--accent);font-weight:600;font-size:.95rem}
+  .job .dates{color:var(--muted);font-size:.85rem;margin-bottom:10px}
+  .job ul{list-style:none}
+  .job li{color:var(--muted);font-size:.92rem;padding-left:18px;position:relative;margin-bottom:8px}
+  .job li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
+  .job li b{color:var(--text)}
+
+  /* Skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .skill-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .skill-box h3{font-size:.98rem;margin-bottom:12px;color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-size:.78rem;padding:4px 11px;border-radius:20px}
+
+  /* Education */
+  .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .edu .card h3{color:var(--text)}
+  .edu .deg{color:var(--accent);font-size:.92rem;font-weight:600}
+  .edu .yr{color:var(--muted);font-size:.85rem}
+
+  /* Contact / footer */
+  .contact-box{text-align:center;padding:20px 0}
+  .contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  footer{border-top:1px solid var(--border);padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem}
+
+  @media(max-width:760px){
+    .about-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Saurabh<span>.Kumar</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="container">
+    <div class="kicker">Senior Data Analyst · AI &amp; Advanced Analytics · Bentonville, AR</div>
+    <h1>Turning regulatory and business problems into <span class="grad">production data &amp; AI products</span></h1>
+    <p class="tagline">I'm Saurabh — a data professional with 7+ years building enterprise analytics platforms, AI-powered decision-support tools, and governed self-service BI for compliance, risk, and operations at Fortune 1 scale.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="mailto:sgpt1669@gmail.com">Get in Touch</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>$4M+</b><span>recognized business impact</span></div>
+      <div class="stat"><b>~$300K</b><span>annual cost savings delivered</span></div>
+      <div class="stat"><b>7+ yrs</b><span>data analytics &amp; AI experience</span></div>
+      <div class="stat"><b>3</b><span>org-wide awards at Walmart</span></div>
+      <div class="stat"><b>15+</b><span>production data products shipped</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2><span class="hash">#</span>About</h2>
+    <div class="about-grid">
+      <div>
+        <p>I work at <b>Walmart Global Ethics &amp; Compliance (IROCC)</b>, where I design and ship the analytics and AI systems that help one of the world's largest companies stay compliant — across firearms, food safety, product recalls, environmental health &amp; safety, and seller integrity.</p>
+        <p>My sweet spot is the full stack of a data product: <b>pipeline → model → application → adoption</b>. I've built LLM-powered apps on Walmart's internal multi-model LLM gateway (including the <b>first text-to-SQL AI system in the organization</b>), full-stack Dataiku web applications with Flask/BigQuery backends, and executive dashboards that leadership actually uses.</p>
+        <p>I combine rigorous analytics — statistical testing, KPI design, root-cause analysis — with practical AI: <b>text-to-SQL, agentic workflows, RAG, and human-in-the-loop review systems</b>. I also mentor analysts and drive team adoption of AI tooling and engineering standards. Currently pursuing an <b>Executive Ph.D. in Information Technology (Data Science emphasis)</b>.</p>
+      </div>
+      <div class="awards">
+        <div class="award"><b>🏆 Data Rockstar (org-wide)</b><span>For automating the Food Safety Certification program and analytics across alcohol- and firearms-compliance programs.</span></div>
+        <div class="award"><b>🏆 Make a Difference — Ethics &amp; Compliance</b><span>For the ATF Audit AI Bot — the first text-to-SQL AI system built in the entire organization.</span></div>
+        <div class="award"><b>🏆 Make a Difference — Global Security</b><span>For the end-to-end migration of Emergency Operations Center data from a legacy system to a modern platform.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2><span class="hash">#</span>Featured Projects</h2>
+    <p class="sub">A selection of production systems I've designed, built, and shipped — spanning AI applications, compliance platforms, and enterprise BI.</p>
+    <div class="grid">
+
+      <div class="card">
+        <h3>🤖 ATF Audit AI Bot — Text-to-SQL</h3>
+        <div class="metric">First text-to-SQL AI system in the org · "Make a Difference" award</div>
+        <p>Natural-language interface for firearms compliance data, built on Walmart's internal multi-model LLM gateway. Auditors ask questions in plain English; the bot generates and executes governed SQL through prompt engineering and iterative logic refinement for complex audit workflows.</p>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">Text-to-SQL</span><span class="tag">Prompt Engineering</span><span class="tag">BigQuery</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🔫 ATF Firearms Compliance Ecosystem</h3>
+        <div class="metric">$4M+ recognized business impact · ~175 hrs/yr saved</div>
+        <p>Modernized firearms compliance reporting into 7+ automated self-service monitoring workstreams — exception detection, fuzzy matching, blocklist monitoring, and audit reminder automation. Proactive detection surfaced 300+ status-failure events with a 24-hour store confirmation window; also initiated denied-background-check automation with API integration and PDF generation.</p>
+        <div class="tags"><span class="tag">Dataiku</span><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">Automation</span></div>
+      </div>
+
+      <div class="card">
+        <h3>📨 Product Removal Messaging System</h3>
+        <div class="metric">~$100K annual savings · scales to 1M+ members per send</div>
+        <p>Production recall-messaging platform replacing a manual, vendor-dependent process for Sam's Club. Three-layer architecture: Dataiku web frontend, Flask backend (14+ endpoints), and a scenario worker for crash-resumable bulk email — JSONL streaming at O(1) memory, 10 parallel SMTP workers, retry passes, and BigQuery audit logging with 7-year retention. Leadership positioned it to become Walmart's enterprise recall-messaging tool.</p>
+        <div class="tags"><span class="tag">Flask</span><span class="tag">BigQuery</span><span class="tag">Dataiku</span><span class="tag">Distributed Processing</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🧠 AI Governance Dashboard</h3>
+        <div class="metric">14 parallel BigQuery queries · 13 interactive visualizations</div>
+        <p>Single source of truth for AI/ML model risk, lifecycle, and PII review across the enterprise. Integrates 3 governance systems; a Python ThreadPoolExecutor backend fans out up to 14 parallel BigQuery queries powering Chart.js visualizations with drill-down modals, multi-dimensional filters (market, brand, reviewer, year), and CSV export across 100+ models.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Chart.js</span><span class="tag">BigQuery</span><span class="tag">AI Governance</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🧊 Cold-Chain Compliance Platform</h3>
+        <div class="metric">4 delivery channels · single source of truth</div>
+        <p>Consolidated WM Spark, Sam's Spark, InHome, and Drone Delivery data into one Dataiku/Power BI platform for temperature-sensitive delivery compliance. Standardized exception logic around validated 75- and 105-minute delivery timers with proactive weekly alerting, cutting time-to-detection so Food Safety partners can act early on store-to-business-unit trends.</p>
+        <div class="tags"><span class="tag">Dataiku</span><span class="tag">Power BI</span><span class="tag">Alerting</span><span class="tag">Food Safety</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🔍 Human-in-the-Loop AI Classification App</h3>
+        <div class="metric">60K+ items/quarter bottleneck · 1,040 projected hours saved</div>
+        <p>Full-stack AI review application for product-safety classification — 8 Flask API endpoints, 1,100+ lines of Python, 1,400+ lines of JavaScript. Optimized BigQuery layer with server-side pagination, window-function dedup, and single-statement bulk updates that collapse thousands of row updates into one round trip per batch.</p>
+        <div class="tags"><span class="tag">Flask</span><span class="tag">JavaScript</span><span class="tag">BigQuery</span><span class="tag">Human-in-the-Loop</span></div>
+      </div>
+
+      <div class="card">
+        <h3>⚖️ LLM Seller-Compliance Pipelines</h3>
+        <div class="metric">120K+ incident records resolved · 3 workstreams</div>
+        <p>Partnered with the Data Science team on LLM-assisted pipelines for seller integrity: Take It Down Act classification (100-term curated dictionary + deterministic signal-tier scoring + LLM), DMCA relevance scoring, and complaint enrichment with dual-path entity resolution — delta-load BigQuery processing, 10-worker multithreading, and business-confirmed false-positive suppression.</p>
+        <div class="tags"><span class="tag">LLM Classification</span><span class="tag">Fuzzy Matching</span><span class="tag">Python</span><span class="tag">Multithreading</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🍽️ Food Safety Certification Automation</h3>
+        <div class="metric">4,700+ stores &amp; clubs · "Data Rockstar" award</div>
+        <p>Replaced a fully manual certification workflow with an API-integrated Dataiku pipeline connecting a third-party exam provider to internal learning systems — mapping certifications to job-code requirements, tracking completion across every business unit, region, market, store, and club, with congratulatory and 1x/2x/3x-fail escalation alerting plus retake analytics.</p>
+        <div class="tags"><span class="tag">API Integration</span><span class="tag">Dataiku</span><span class="tag">Power BI</span><span class="tag">Alerting</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🐟 HACCP Seafood Monitoring &amp; OTC Compliance</h3>
+        <div class="metric">1+ hr/week saved per associate · daily automated refresh</div>
+        <p>Dataiku monitoring tool surfacing seafood items not properly flagged for HACCP receiving requirements, with daily 7 AM automated backend refresh. Also built an OTC drug dashboard improving visibility of FDA-registered products and flagging non-compliant items.</p>
+        <div class="tags"><span class="tag">Dataiku</span><span class="tag">Food Safety</span><span class="tag">FDA Compliance</span></div>
+      </div>
+
+      <div class="card">
+        <h3>⛽ Fuel Storage Asset Dashboard</h3>
+        <div class="metric">10+ dynamic filters · KPI cards · interactive maps</div>
+        <p>Environmental Compliance web app consolidating fuel facility, tank, capacity, leak-detection, and compliance-ownership data — Dataiku/BigQuery backend with Chart.js visuals, map views, paginated tables, and CSV export.</p>
+        <div class="tags"><span class="tag">Dataiku</span><span class="tag">BigQuery</span><span class="tag">Chart.js</span><span class="tag">Maps</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🔎 Store-Facing Compliance Lookup Tools</h3>
+        <div class="metric">10+ tools · used across 4,700+ locations</div>
+        <p>Self-service lookup suite spanning Environmental Health &amp; Safety, Alcohol Tobacco &amp; Firearms, Product Safety, and Food Safety — Trip Reduction Program survey links and access codes, EPA ID lookup for hazardous waste disposal, recall lookup, state-by-state food handler certification requirements, smokeless powder rules, and alcohol license/delivery/ID compliance.</p>
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Self-Service</span></div>
+      </div>
+
+      <div class="card">
+        <h3>🌍 International Reconciliation Automation</h3>
+        <div class="metric">$192K annual savings · 10 markets</div>
+        <p>Automated reconciliation reporting across 10 international markets with complex query logic and recurring dashboards; also standardized 100+ Tableau Prep flows across product safety, returns, shipping, and procurement.</p>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">Tableau Prep</span><span class="tag">Automation</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2><span class="hash">#</span>Experience</h2>
+    <div class="timeline">
+
+      <div class="job">
+        <h3>Senior Data Analyst (IROCC), Global Ethics and Compliance</h3>
+        <div class="org">Walmart USA — Bentonville, AR</div>
+        <div class="dates">July 2023 – Present</div>
+        <ul>
+          <li>Earned the org-wide <b>"Data Rockstar"</b> and <b>"Make a Difference"</b> awards for compliance analytics automation and the first text-to-SQL AI system in the organization.</li>
+          <li>Modernized the ATF firearms compliance reporting ecosystem into 7+ automated workstreams generating <b>$4M+ in recognized business impact</b>.</li>
+          <li>Designed and launched a production recall-messaging platform saving <b>~$100K annually</b> and scaling to 1M+ members per send.</li>
+          <li>Partnered with the Data Science team on machine learning and LLM initiatives — human-in-the-loop AI review, LLM classification pipelines, and enterprise AI governance.</li>
+          <li>Built 10+ self-service compliance lookup tools used daily by associates across 4,700+ locations; mentored analysts and championed AI-assisted development.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Senior Data Analyst (IROCC), Global Security, Aviation and Investigations</h3>
+        <div class="org">Walmart USA — Bentonville, AR</div>
+        <div class="dates">July 2022 – July 2023</div>
+        <ul>
+          <li>Earned the <b>"Make a Difference"</b> award for the end-to-end Emergency Operations Center data migration, with Power BI and PowerApps supporting Associate Vetting.</li>
+          <li>Analyzed store-violence data with descriptive and inferential statistics, driving reactive and proactive security responses across Stores, Clubs, and Distribution Centers.</li>
+          <li>Collaborated with KPMG on external-data platform onboarding; delivered AI-driven analytical tools and led workshops across Insider Threat, Emergency Operations, and Business Continuity.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Business &amp; Data Analyst</h3>
+        <div class="org">SkipLoop Labs — Bangalore, India</div>
+        <div class="dates">Jan 2018 – May 2021</div>
+        <ul>
+          <li>Architected ETL pipelines migrating OLTP databases to a data warehouse (SQL, AWS), cutting reporting time by 2 hours.</li>
+          <li>Clickstream and funnel analytics that boosted conversion 10%, average order value 7%, and click-through rates 60%; RFM segmentation reactivated 4% of dormant customers.</li>
+          <li>Led sprint reviews and UAT to deliver 2 major AU/US client projects on schedule, impacting 30,000+ new users.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Research Analyst and Operation Control</h3>
+        <div class="org">ARB Trading Group — Gurgaon, India</div>
+        <div class="dates">May 2017 – Sep 2017</div>
+        <ul>
+          <li>Managed P&amp;L and risk in European VIX Futures and German Bond markets; trading strategies drove profitability up 20%.</li>
+          <li>Built BI dashboards for KRI monitoring (33% faster turnaround) and a logistic-regression credit-scoring model with 94% accuracy.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2><span class="hash">#</span>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-box"><h3>AI &amp; Machine Learning</h3><div class="chips"><span class="chip">LLMs</span><span class="chip">Text-to-SQL</span><span class="chip">Agentic AI</span><span class="chip">RAG</span><span class="chip">Prompt Engineering</span><span class="chip">AI Chatbots</span><span class="chip">Human-in-the-Loop Review</span><span class="chip">Multi-Model LLM Gateway</span><span class="chip">Jupyter / DAG ML Workflows</span><span class="chip">NLP</span><span class="chip">TensorFlow/Keras</span></div></div>
+      <div class="skill-box"><h3>Data Analytics</h3><div class="chips"><span class="chip">Exploratory Data Analysis</span><span class="chip">KPI Design</span><span class="chip">Root-Cause Analysis</span><span class="chip">A/B Testing</span><span class="chip">Regression</span><span class="chip">Time Series Forecasting</span><span class="chip">Text Mining</span><span class="chip">RFM Modeling</span><span class="chip">Statistical Inference</span></div></div>
+      <div class="skill-box"><h3>Programming &amp; Web</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Flask REST APIs</span><span class="chip">JavaScript/jQuery</span><span class="chip">Chart.js</span><span class="chip">HTML/CSS</span><span class="chip">Bootstrap</span></div></div>
+      <div class="skill-box"><h3>BI &amp; Visualization</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Tableau &amp; Tableau Prep</span><span class="chip">Dataiku WebApps</span><span class="chip">QlikSense</span><span class="chip">ArcGIS</span></div></div>
+      <div class="skill-box"><h3>Data Engineering &amp; Cloud</h3><div class="chips"><span class="chip">Google BigQuery</span><span class="chip">Dataiku ETL</span><span class="chip">Alteryx</span><span class="chip">Talend</span><span class="chip">AWS</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span></div></div>
+      <div class="skill-box"><h3>Automation &amp; DevOps</h3><div class="chips"><span class="chip">Power Automate</span><span class="chip">RPA</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">JIRA</span><span class="chip">PowerApps</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2><span class="hash">#</span>Education</h2>
+    <div class="edu">
+      <div class="card"><h3>University of the Cumberlands</h3><div class="deg">Executive Ph.D. in Information Technology, Emphasis in Data Science</div><div class="yr">2025 – Present · Williamsburg, Kentucky</div></div>
+      <div class="card"><h3>Arizona State University — W.P. Carey School of Business</h3><div class="deg">M.S. in Business Analytics (STEM)</div><div class="yr">2021 – 2022 · Tempe, Arizona</div></div>
+      <div class="card"><h3>National Institute of Technology, Jaipur</h3><div class="deg">B.Tech. in Metallurgical and Materials Engineering</div><div class="yr">2013 – 2017 · Jaipur, India</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact-box">
+    <h2><span class="hash">#</span>Get in Touch</h2>
+    <p class="sub" style="margin:0 auto 6px">Open to conversations about data analytics, AI applications, and interesting problems.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:sgpt1669@gmail.com">✉️ sgpt1669@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/saurabhkumar95" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/saurabh1669" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© <span id="yr"></span> Saurabh Kumar · Built with plain HTML/CSS · Hosted on GitHub Pages</div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
