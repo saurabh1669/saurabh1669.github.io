@@ -407,6 +407,23 @@
       </div>
     </div>
 
+    <!-- 10 -->
+    <div class="case rv">
+      <div class="case-meta">
+        <div class="case-num">/ 10</div>
+        <div class="case-cat">Global Sanctions · Trade Compliance</div>
+        <div class="case-impact">Automated OFAC sanctioned-country item monitoring</div>
+        <div class="case-tags"><span class="t">BigQuery</span><span class="t">Dataiku</span><span class="t">Tableau</span><span class="t">1P / 3P Data</span></div>
+      </div>
+      <div class="case-body">
+        <h3>Sanctions Compliance Analytics Pipeline</h3>
+        <p class="summary">An enterprise reporting pipeline and dashboard ecosystem helping the Global Sanctions Compliance team monitor items connected to prohibited and sanctioned countries — across first-party and marketplace catalogs in multiple markets.</p>
+        <div class="detail"><b>The problem</b><p>OFAC-related sanctions monitoring spanned disconnected item sources across multiple markets, with manual monthly report handling and no consolidated detection process for newly appearing sanctioned-country items.</p></div>
+        <div class="detail"><b>What I built</b><p>Consolidated multi-market 1P and 3P item data into recurring BigQuery reporting tables anchored by a master sanctioned-items dataset, with a Dataiku detection flow that compares weekly item pulls against the master table — automatically notifying the Global Sanctions Compliance team of newly detected items and appending them to the master dataset. Developed the dashboard query logic (item, UPC, vendor, buyer, country-of-origin, prohibited-country indicators) plus stakeholder-requested enhancements like prohibited-country common-name mapping, supplier partner typing, and simple/detailed export views.</p></div>
+        <div class="detail"><b>Outcome</b><p>A recurring detection → notification → master-update monitoring workflow trusted for compliance decisioning — backed by audit-ready documentation of query logic, data connectors, source tables, filters, and access groups that supported Global Audit's review. Also sustained daily vendor non-compliance notification flows and helped define requirements for fully automated data-feed ingestion.</p></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
